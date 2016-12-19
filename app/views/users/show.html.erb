@@ -1,5 +1,81 @@
 <p>Username: <%= @user.email %></p>
 
+
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+
+        <div class="navbar-header">
+          <%= image_tag("logo.png", :alt => "logo") %>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="wrapper-md">
+        <div class="panel-heading text-center">
+          <br>
+          <br>
+
+        </div>
+        <!-- beginning current user profile -->
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6" data-id="<%=current_user.id%>">
+                <div class="well well-sm">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6">
+                            <div class="m-b-sm text-md"><strong>My Profile</strong></div>
+
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+
+                            <p class="lead">
+                                Native Lanuage : <strong><%= current_user.native_lang %></strong>
+                                <br />
+                                language to Practice : <strong><%= current_user.learn_lang %></strong>
+                                <br />
+                              <%= link_to 'Edit', edit_user_path(current_user.id)  %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+       <!--end of current user profile -->
+        <br>
+        <div class="text-center">
+          <h1><strong>Potential Language Exchange Partners Found!</strong></h1>
+        </div>
+        <br>
+
+        <br>
+
+        <div class="table-responsive">
+          <!-- found user profiles -->
+            <div id='foundUsers'>
+              <div class="container">
+                  <div class="row">
+                    <% @matching_users.each do |matching_user| %>
+                    <p>Name: <%= matching_user.name %></p>
+                    <p>Native Language: <%= matching_user.native_lang %></p>
+                    <p>Language Learning: <%= matching_user.learn_lang %></p>
+                    <img src="<%= matching_user.profile_url %>">
+                    <br>
+                    <% end %>
+
+                  </div>
+              </div>
+                  <!-- end of user row -->
+            </div>
+        </div>
+    </div>
+
 <h2>Friends</h2>
 <ul>
   <% for friendship in @user.friendships %>
