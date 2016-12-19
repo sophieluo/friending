@@ -1,0 +1,16 @@
+
+<%= form_for @user do |f| %>
+
+  Name: <%= f.text_field :name %>
+    <br>
+  Email: <%= f.text_field :email %>
+    <br>
+  Your Native Language: <%= f.text_field :native_lang %>
+    <br>
+  Language You Want to Learn: <%= f.text_field :learn_lang %>
+    <br>
+
+
+  <%= f.submit "Submit" %>
+
+<% end %>
