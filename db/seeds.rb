@@ -5,11 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create([
-  {email: "ross@example.com", password: "password"},
-  {email: "rachel@example.com", password: "password"},
-  {email: "chandler@example.com", password: "password"},
-  {email: "joey@example.com", password: "password"},
-  {email: "monica@example.com", password: "password"},
-  {email: "phoebe@example.com", password: "password"}
-])
+require 'ffaker'
+# Wipe the database
+# User.destroy_all
+# # Let's create a bunch of records
+500.times do
+  User.create({
+    name: FFaker::Name.first_name,
+    email: FFaker::Internet.email,
+    native_lang: FFaker::Locale.language,
+    learn_lang: FFaker::Locale.language,
+    })
+end
