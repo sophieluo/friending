@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Refactored Project 1 - Lingo Jungle app.
 
-Things you may want to cover:
+Rewrote all the existing features using Rails. Added in new features:
+- fileupload using Paperclip "https://github.com/thoughtbot/paperclip" and imagemagick "http://www.imagemagick.org/script/index.php".
 
-* Ruby version
+- friending using devise "https://github.com/plataformatec/devise"
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Further focus:
+- unfriending
+- checking for duplicates before adding friends
+- invitation "https://github.com/sf-wdi-33/activerecord-self-referential"
+- messaging?
