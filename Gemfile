@@ -29,6 +29,9 @@ gem 'jbuilder', '~> 2.5'
 # Use 'devise' for self-reference
 gem 'devise'
 
+# Use Paperclip to upload and process pictures
+gem "paperclip", "~> 5.0.0"
+
 # User 'ffaker' for fake data
 gem "ffaker"
 # Use Capistrano for deployment

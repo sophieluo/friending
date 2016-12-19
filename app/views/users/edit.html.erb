@@ -1,5 +1,5 @@
 
-<%= form_for @user do |f| %>
+<%= form_for @user, url: user_path, html: { multipart: true } do |f| %>
 
   Name: <%= f.text_field :name %>
     <br>
@@ -9,7 +9,7 @@
     <br>
   Language You Want to Learn: <%= f.text_field :learn_lang %>
     <br>
-
+  <%= f.file_field :avatar %>
 
   <%= f.submit "Submit" %>
 

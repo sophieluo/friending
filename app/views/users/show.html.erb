@@ -37,6 +37,8 @@
 
                             <p class="lead">
                               Name : <strong><%= current_user.name %></strong>
+                              <%= image_tag current_user.avatar.url(:medium) %>
+                              <br />
                                 Native Lanuage : <strong><%= current_user.native_lang %></strong>
                                 <br />
                                 language to Practice : <strong><%= current_user.learn_lang %></strong>
@@ -66,7 +68,9 @@
                     <p>Name: <%= matching_user.name %></p>
                     <p>Native Language: <%= matching_user.native_lang %></p>
                     <p>Language Learning: <%= matching_user.learn_lang %></p>
-                    <p><%= matching_user.email %><%= link_to "Add Friend", friendships_path(:friend_id => matching_user), :method => :post %></p>
+                    <p><%= matching_user.email %>
+                    <br>
+                    <%= link_to "Add Friend", friendships_path(:friend_id => matching_user), :method => :post %></p>
                     <br>
                     <% end %>
 
